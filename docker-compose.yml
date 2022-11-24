@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  gin_app:
+    container_name: gin_app
+    build:
+      context: .
+      dockerfile: ./gin/Dockerfile
+    ports:
+      - "3000:8080"
+    volumes:
+      - ./gin/src/:/go/src
+    tty: true
